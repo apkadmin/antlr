@@ -11,16 +11,15 @@ public class Calculator {
 
     public static void main(String[] args) throws Exception {
         String sourceCode = """
-                `Số nguyên` = 5
+                `Số nguyên` = "5"
+                `Số nguyên` = `Số nguyên` + 1
                 `Số thực`  = 5.5
                 `Ds mảng` = [1,2,3,4]
-                Nếu `Số nguyên` == 5:
+                Nếu (`Số nguyên` == 5):
                     `Số nguyên`= 10
                 Duyệt `Mảng` trong `Ds mảng`:
                     `So mang` = 21
                     `Số nguyên` = 1
-                Lặp `So mang` < 11:
-                    `Số nguyên` = `Số nguyên` + 1
                 """;
 
         CharStream charStream = CharStreams.fromReader(new StringReader(sourceCode));
